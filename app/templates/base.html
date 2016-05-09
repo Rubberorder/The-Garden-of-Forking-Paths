@@ -1,0 +1,71 @@
+{% extends "bootstrap/base.html" %}
+
+<<!DOCTYPE html>
+<html>
+
+<head>
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+<link rel="shortcut icon" href="{{ url_for('static', filename='capricorn.png') }}" type="image/x-icon">
+<meta charset="utf-8">
+    <title>
+    {% block title %}
+    The Garden of Forking Paths
+    {% endblock %}
+    </title>
+    {% block meta %}
+    <meta charset="utf-8">
+    <meta content="Python post-rock novel" name="keywords">
+    {% endblock %}
+{% endblock %}
+</head>
+
+<body>
+{% block navbar %}
+<div class="container">
+    <div class="navbar navbar-default">
+        <div class="navbar-header">
+        <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#my_navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{{ url_for('main.index') }}">
+        <h1>The Garden of Forking Paths</h1>
+        </a>
+
+        </div>
+
+        <div class="collapse navbar-collapse pull-right" id="my_navbar">
+            <ul class="nav navbar-nav" >
+                <li><a href="https://github.com/Rubberorder"><i class="icon-github-alt icon-4x"></i></a></li>
+                <li><a href="https://www.douban.com/people/mnster/"><i class="icon-comment-alt icon-4x"></i></a></li>
+                <li><a href="https://http://weibo.com/1689356883"><i class="icon-pinterest icon-4x"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{ message }}
+    </div>
+    {% endfor %}
+
+    {% block page_content %}{% endblock %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+{{ moment.include_moment() }}
+{% endblock %}
+</body>
+</html>
