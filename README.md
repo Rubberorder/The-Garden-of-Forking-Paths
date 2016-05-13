@@ -1,9 +1,9 @@
 # The-Garden-of-Forking-Paths
 个人博客
 
-* app
+> app
 视图、模板、API、js、表单
-   + api_1_0
+>> api_1_0
 restful api
 ````
 /posts
@@ -11,9 +11,9 @@ restful api
 /posts/<int:id> method='PUT'
 errors
 ````
-    + auth
+>> auth
 登录、登出、表单，可拓展到注册与验证
-    + main
+>> main
 主路由
 ````
 /
@@ -24,35 +24,35 @@ errors
 /music #unfinished
 /novel #unfinished
 ````
-    + static
+>> static
  icon、Bootstrap、jquery
 
-    + templates
+>> templates
  模板文件，使用Bootstrap，icon拓展font-awesome
 
-    + __init__
+>> __init__
  初始化
 
-    + decorators
+>> decorators
  可拓展权限过滤
 
-    + models
+>> models
  模型 ORM
 
-* log
+> log
  运行记录
 
-* migrations
+> migrations
  数据库迁移记录
 
-* tests
+> tests
  测试
 
-* config
+> config
  配置文件
 
-* manage
+> manage
  启动文件
 
-* requirements
+> requirements
  环境
